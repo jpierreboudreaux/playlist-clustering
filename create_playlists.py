@@ -15,11 +15,11 @@ def spotify_setup():
     redirect_uri = "your_redirect_url"
 
     auth_manager = SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scopes)
-    sp = spotipy.Spotify(auth_manager=auth_manager)
+    spotify = spotipy.Spotify(auth_manager=auth_manager)
 
     user_id = sp.current_user()["id"]
     user_playlists = sp.user_playlists(user_id)["items"]
-    return sp, user_id, user_playlists
+    return spotify, user_id, user_playlists
 
 def get_playlist_to_split():
     """
