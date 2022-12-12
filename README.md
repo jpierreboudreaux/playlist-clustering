@@ -1,6 +1,10 @@
 # playlist-clustering
 A machine learning model to suggest playlists for a set of songs based on similarity. This project uses Principal Component Analysis (PCA) and Gaussian Mixture Models (GMM) to extract the most important features from each song and cluster a list of songs into unique groups or playlists.
 
+![Example Song Dataset after PCA](resources/images/data_images_0.png)
+![Example Song Dataset after PCA](resources/images/data_images_1.png)
+![Example of GMM Classification](resources/images/data_images_2.png)
+
 ## Prerequisites
 To run this project, you will need to have the following dependencies installed:
 
