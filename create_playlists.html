@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Playlist Creation App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" type="text/css" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Roboto", sans-serif;
+    }
+    body {
+      font-size: 30px;
+      text-align: center;
+      padding: 30px;
+      background-color: #191414;
+      color: #1db954;
+    }
+    .form-fields {
+      margin: 20px;
+    }
+    .form-field {
+      margin-bottom: 10px;
+    }
+    .form-field label {
+      display: block;
+    }
+    .form-field input {
+      width: 50%;
+      max-width: 700px;
+      /* line-height: 40px; */
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 20px;
+      background-color: #282828;
+      color: #b3b3b3;
+    }
+    .toggle-view-secret {
+      /* margin-top: -10px; */
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .toggle-view-secret i {
+      top: 50px;
+      font-size: 20px;
+      position: absolute;
+      cursor: pointer;
+      color: white;
+      top: 50%;
+      transform: translate(-200%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <h1>Playlist Creation App</h1>
+  <p>Enter your Spotify API credentials to use this app:</p>
+  <form class="form-fields">
+    <div class="form-field">
+      <label for="client-id">Client ID</label>
+      <input type="text" id="client-id" name="client-id">
+    </div>
+    <div class="form-field">
+      <label for="client-secret">Client Secret</label>
+      <input type="password" id="client-secret" name="client-secret">
+      <span class="toggle-view-secret" onclick="toggleSecret()">
+        <i class="bi bi-eye-slash-fill"></i>
+      </span>
+      <script>
+        const secretInput = document.getElementById('client-secret');
+        const icon = document.querySelector('.toggle-view-secret i');
+        function toggleSecret() {
+          if (secretInput.type === 'password') {
+            secretInput.type = 'text';
+            icon.className = 'bi bi-eye-fill';
+          } else {
+            secretInput.type = 'password';
+            icon.className = 'bi bi-eye-slash-fill';
+          }
+        }
+      </script>
+    </div>
+    <div class="form-field">
+      <label for="redirect-uri">Redirect URI</label>
+      <input type="text" id="redirect-uri" name="redirect-uri">
+    </div>
+  </form>
+</body>
+</html>
