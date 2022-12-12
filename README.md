@@ -35,5 +35,5 @@ To create new playlists based on the model, run the create_playlists.py script a
 python create_playlists.py
 ```
 
-License
+## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
